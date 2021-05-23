@@ -1,5 +1,3 @@
-![AladdinDAO](/aladdin.jpg)
-
 # AladdinDAO
 A community driven yield farming DAO.
 
