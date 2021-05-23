@@ -1,3 +1,5 @@
+![AladdinDAO](/aladdin.jpg)
+
 # AladdinDAO
 A community driven yield farming DAO.
 
@@ -26,3 +28,9 @@ Standard Synthetix style staking reward contracts with modification for allowing
 
 ### DAO
 Contracts for DAO and treasury
+
+## Deployed Contracts
+[Deployments](https://github.com/AladdinDAO/deployments)
+
+## License
+[MIT](LICENSE.txt)
