@@ -19,6 +19,7 @@ contract ALDPlus is ReentrancyGuard {
     uint256 public stakeAmount; // amount of ALD to stake to gain aldplus status
 
     // only whitelisted address can stake
+    bool public enableWhitelist = true;
     mapping(address => bool) public isWhitelisted;
     address[] public whitelist;
 
@@ -78,6 +79,20 @@ contract ALDPlus is ReentrancyGuard {
         stakeAmount = _stakeAmount;
     }
 
+    function setEnableWhitelist()
+        external
+        onlyGov
+    {
+        enableWhitelist = true;
+    }
+
+    function setDisableWhitelist()
+        external
+        onlyGov
+    {
+        enableWhitelist = false;
+    }
+
     function addToWhitelist(address _user)
         external
         onlyGov
@@ -119,7 +134,9 @@ contract ALDPlus is ReentrancyGuard {
     }
 
     modifier onlyWhitelist() {
-        require(isWhitelisted[msg.sender] == true, "!whitelist");
+        if (enableWhitelist) {
+            require(isWhitelisted[msg.sender] == true, "!whitelist");
+        }
         _;
     }
 
